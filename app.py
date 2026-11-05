@@ -152,7 +152,6 @@ with right:
                 st.error("Unable to analyze this message. Check the application logs if the issue continues.")
                 st.code(f"{type(exc).__name__}: {exc}")
 
-st.markdown('<div class="note">Built with Streamlit · Models hosted on Hugging Face · Predictions are probabilistic and do not guarantee that any message is safe.</div>', unsafe_allow_html=True)
 
 # Developer Credit
 st.markdown("""
