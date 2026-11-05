@@ -29,95 +29,6 @@ if image_path.exists():
     background = f"url('data:image/png;base64,{encoded}')"
 
 
-st.markdown("""
-<style>
-.security-dashboard {
-    max-width: 570px;
-    margin: 12px 0 18px;
-    padding: 15px;
-    background: rgba(3, 21, 45, 0.68);
-    border: 1px solid rgba(75, 215, 255, 0.25);
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-}
-.security-heading {
-    color: #51d9ff;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-.security-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 9px;
-}
-.security-stat {
-    padding: 12px 9px;
-    background: rgba(10, 41, 69, 0.8);
-    border: 1px solid rgba(81, 217, 255, 0.15);
-    border-radius: 10px;
-    transition: transform .25s, border-color .25s;
-}
-.security-stat:hover {
-    transform: translateY(-4px);
-    border-color: #51d9ff;
-}
-.security-number {
-    font-size: 22px;
-    font-weight: 800;
-    color: white;
-}
-.security-label {
-    font-size: 11px;
-    color: #a8c7dd;
-}
-.security-credit {
-    margin-top: 12px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(81, 217, 255, .2);
-    color: #a8c7dd;
-    font-size: 11px;
-}
-.security-credit strong {
-    color: #51d9ff;
-    font-size: 15px;
-    letter-spacing: 1px;
-}
-@media(max-width: 600px) {
-    .security-dashboard {padding: 10px;}
-    .security-number {font-size: 17px;}
-    .security-label {font-size: 10px;}
-}
-</style>
-
-<div class="security-dashboard">
-    <div class="security-heading">
-        ✦ AI SECURITY INTELLIGENCE
-    </div>
-    <div class="security-stats">
-        <div class="security-stat">
-            <div class="security-number">02</div>
-            <div class="security-label">AI Models</div>
-        </div>
-        <div class="security-stat">
-            <div class="security-number">98.86%</div>
-            <div class="security-label">Best Test Accuracy</div>
-        </div>
-        <div class="security-stat">
-            <div class="security-number">LIVE</div>
-            <div class="security-label">Message Analysis</div>
-        </div>
-    </div>
-    <div class="security-credit">
-        DESIGNED & DEVELOPED BY
-        <strong>AAQIB ALI</strong>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-
-
 
 st.markdown(f"""
 <style>
@@ -243,4 +154,122 @@ with right:
                 st.error("Unable to analyze this message. Check the application logs if the issue continues.")
                 st.code(f"{type(exc).__name__}: {exc}")
 
-st.markdown('<div class="note">Built with Streamlit · Models hosted on Hugging Face · Predictions are probabilistic and do not guarantee that any message is safe.</div>', unsafe_allow_html=True)
+
+
+# Modern cyan-blue card styling
+st.markdown("""
+<style>
+
+/* Main Streamlit cards */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: rgba(3, 21, 45, 0.82) !important;
+    border: 1px solid rgba(48, 155, 210, 0.35) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 24px rgba(0, 15, 40, 0.25) !important;
+    backdrop-filter: blur(12px);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Glowing card hover */
+div[data-testid="stVerticalBlockBorderWrapper"]:hover {
+    border-color: rgba(65, 210, 255, 0.75) !important;
+    box-shadow:
+        0 0 20px rgba(0, 195, 255, 0.12),
+        inset 0 0 12px rgba(0, 195, 255, 0.04) !important;
+    transform: translateY(-2px);
+}
+
+/* Dropdown styling */
+div[data-baseweb="select"] > div {
+    background: rgba(9, 35, 62, 0.95) !important;
+    border: 1px solid rgba(48, 155, 210, 0.4) !important;
+    border-radius: 10px !important;
+}
+
+/* Message input styling */
+div[data-testid="stTextArea"] textarea {
+    background: rgba(4, 19, 40, 0.92) !important;
+    border: 1px solid rgba(48, 155, 210, 0.4) !important;
+    border-radius: 12px !important;
+    color: #e8f7ff !important;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+div[data-testid="stTextArea"] textarea:focus {
+    border-color: #51d9ff !important;
+    box-shadow: 0 0 15px rgba(81, 217, 255, 0.15) !important;
+}
+
+/* Analyze button */
+div.stButton > button[kind="primary"] {
+    background: linear-gradient(
+        110deg, #0877b8, #0db9e6
+    ) !important;
+    border: 1px solid #36caff !important;
+    border-radius: 11px !important;
+    color: white !important;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+div.stButton > button[kind="primary"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(13, 185, 230, 0.4);
+}
+
+/* Expander panel */
+div[data-testid="stExpander"] {
+    background: rgba(5, 26, 50, 0.85) !important;
+    border: 1px solid rgba(48, 155, 210, 0.3) !important;
+    border-radius: 11px !important;
+}
+
+/* Secondary information boxes */
+div[data-testid="stAlert"] {
+    border-radius: 11px !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+
+
+# Developer Credit
+st.markdown("""
+<style>
+.developer-credit {
+    text-align: center;
+    margin-top: 45px;
+    padding: 22px;
+    border-top: 1px solid rgba(0, 212, 255, 0.35);
+    color: #a9c5dc;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.developer-credit strong {
+    color: #55e6ff;
+    font-size: 18px;
+    font-weight: 800;
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.developer-credit strong:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px #00d4ff;
+}
+
+</style>
+
+<div class="developer-credit">
+    🛡️ Designed & Developed by
+    <strong>AAQIB ALI MAGSI</strong>
+    <div style="margin-top:8px; font-size:12px;">
+        AI-Powered Phishing Detection System
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
