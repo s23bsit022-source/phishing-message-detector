@@ -153,3 +153,41 @@ with right:
                 st.code(f"{type(exc).__name__}: {exc}")
 
 st.markdown('<div class="note">Built with Streamlit · Models hosted on Hugging Face · Predictions are probabilistic and do not guarantee that any message is safe.</div>', unsafe_allow_html=True)
+
+# Developer Credit
+st.markdown("""
+<style>
+.developer-credit {
+    text-align: center;
+    margin-top: 45px;
+    padding: 22px;
+    border-top: 1px solid rgba(0, 212, 255, 0.35);
+    color: #a9c5dc;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.developer-credit strong {
+    color: #55e6ff;
+    font-size: 18px;
+    font-weight: 800;
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.developer-credit strong:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px #00d4ff;
+}
+
+</style>
+
+<div class="developer-credit">
+    🛡️ Designed & Developed by
+    <strong>AAQIB ALI</strong>
+    <div style="margin-top:8px; font-size:12px;">
+        AI-Powered Phishing Detection System
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
