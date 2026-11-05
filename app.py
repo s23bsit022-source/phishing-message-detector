@@ -69,6 +69,94 @@ hr {{border-color:#244a6b!important;}}
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+.security-dashboard {
+    max-width: 570px;
+    margin: 12px 0 18px;
+    padding: 15px;
+    background: rgba(3, 21, 45, 0.68);
+    border: 1px solid rgba(75, 215, 255, 0.25);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+}
+.security-heading {
+    color: #51d9ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.security-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+}
+.security-stat {
+    padding: 12px 9px;
+    background: rgba(10, 41, 69, 0.8);
+    border: 1px solid rgba(81, 217, 255, 0.15);
+    border-radius: 10px;
+    transition: transform .25s, border-color .25s;
+}
+.security-stat:hover {
+    transform: translateY(-4px);
+    border-color: #51d9ff;
+}
+.security-number {
+    font-size: 22px;
+    font-weight: 800;
+    color: white;
+}
+.security-label {
+    font-size: 11px;
+    color: #a8c7dd;
+}
+.security-credit {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(81, 217, 255, .2);
+    color: #a8c7dd;
+    font-size: 11px;
+}
+.security-credit strong {
+    color: #51d9ff;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+@media(max-width: 600px) {
+    .security-dashboard {padding: 10px;}
+    .security-number {font-size: 17px;}
+    .security-label {font-size: 10px;}
+}
+</style>
+
+<div class="security-dashboard">
+    <div class="security-heading">
+        ✦ AI SECURITY INTELLIGENCE
+    </div>
+    <div class="security-stats">
+        <div class="security-stat">
+            <div class="security-number">02</div>
+            <div class="security-label">AI Models</div>
+        </div>
+        <div class="security-stat">
+            <div class="security-number">98.86%</div>
+            <div class="security-label">Best Test Accuracy</div>
+        </div>
+        <div class="security-stat">
+            <div class="security-number">LIVE</div>
+            <div class="security-label">Message Analysis</div>
+        </div>
+    </div>
+    <div class="security-credit">
+        DESIGNED & DEVELOPED BY
+        <strong>AAQIB ALI</strong>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+
 # Decorative pointer trail: best-effort enhancement. Streamlit may isolate
 # component iframes on some hosting versions; core app remains fully functional.
 components.html("""
