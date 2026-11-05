@@ -190,3 +190,65 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# Responsive full-screen layout
+st.markdown("""
+<style>
+/* Reduce Streamlit's default spacing */
+.block-container {
+    max-width: 1200px !important;
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.3rem !important;
+}
+
+/* Compact headings and paragraphs */
+h1, h2, h3 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+div[data-testid="stVerticalBlock"] {
+    gap: 0.45rem;
+}
+
+/* Compact message input */
+textarea {
+    min-height: 110px !important;
+    max-height: 22vh !important;
+}
+
+/* Compact buttons */
+.stButton button {
+    min-height: 42px !important;
+}
+
+/* Compact developer credit */
+.developer-credit {
+    margin-top: 8px !important;
+    padding: 8px !important;
+}
+
+/* Desktop screen-fit adjustments */
+@media (min-width: 900px) and (min-height: 650px) {
+    .block-container {
+        padding-top: 0.4rem !important;
+    }
+
+    div[data-testid="stTextArea"] textarea {
+        height: clamp(100px, 18vh, 160px) !important;
+    }
+}
+
+/* Keep mobile layout scrollable for usability */
+@media (max-width: 768px) {
+    .block-container {
+        padding: 1rem !important;
+    }
+
+    textarea {
+        max-height: none !important;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
+
+
